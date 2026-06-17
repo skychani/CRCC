@@ -9,37 +9,39 @@
    DESIGN TOKENS
 ════════════════════════════════════════ */
 :root {
-  --bg:        #111318;
-  --surface:   #1a1d27;
-  --panel:     #20253a;
-  --border:    #2a2f4a;
-  --accent:    #5b7cfa;
-  --accent-dim:rgba(91,124,250,.12);
-  --green:     #22c55e;
-  --green-dim: rgba(34,197,94,.12);
-  --yellow:    #f59e0b;
-  --yellow-dim:rgba(245,158,11,.12);
-  --red:       #ef4444;
-  --red-dim:   rgba(239,68,68,.12);
-  --purple:    #a78bfa;
-  --text:      #e2e8f0;
-  --dim:       #94a3b8;
-  --muted:     #4a5272;
-  --mono:      'JetBrains Mono','Fira Code',monospace;
+  --bg:        #0d0f14;
+  --surface:   #13161f;
+  --panel:     #1a1e2e;
+  --border:    #252a42;
+  --accent:    #6b8fff;
+  --accent-dim:rgba(107,143,255,.14);
+  --green:     #34d472;
+  --green-dim: rgba(52,212,114,.13);
+  --yellow:    #fbbf24;
+  --yellow-dim:rgba(251,191,36,.13);
+  --red:       #f05252;
+  --red-dim:   rgba(240,82,82,.13);
+  --purple:    #b79bff;
+  --text:      #f0f4ff;
+  --dim:       #a8b4cc;
+  --muted:     #5a6282;
+  --font:      'Pretendard','Noto Sans KR',system-ui,sans-serif;
+  --mono:      'Pretendard','Noto Sans KR',system-ui,sans-serif;
   --sans:      'Pretendard','Noto Sans KR',system-ui,sans-serif;
   --r:         8px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14px;line-height:1.6;min-height:100vh}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14.5px;line-height:1.65;min-height:100vh}
 
 /* ── HEADER ── */
 .app-header{
   background:var(--surface);border-bottom:1px solid var(--border);
-  padding:0 24px;height:52px;
+  padding:0 28px;height:56px;
   display:flex;align-items:center;justify-content:space-between;
   position:sticky;top:0;z-index:200;
+  box-shadow:0 1px 0 rgba(107,143,255,.08);
 }
-.app-header h1{font-size:14px;font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.app-header h1{font-size:17px;font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:10px;color:var(--text)}
 .app-header h1 .tag{
   font-family:var(--mono);font-size:11px;
   background:var(--accent-dim);color:var(--accent);
@@ -54,25 +56,25 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14
   display:flex;padding:0 24px;
 }
 .tab-btn{
-  background:none;border:none;color:var(--dim);
-  font-size:13px;font-family:var(--sans);
-  padding:10px 18px;cursor:pointer;
+  background:none;border:none;color:var(--muted);
+  font-size:13.5px;font-family:var(--font);font-weight:500;
+  padding:10px 20px;cursor:pointer;
   border-bottom:2px solid transparent;
   transition:color .15s,border-color .15s;white-space:nowrap;
 }
 .tab-btn:hover{color:var(--text)}
-.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:700}
 
 /* ── KPI BANNER ── */
 .kpi-banner{
   display:grid;grid-template-columns:repeat(5,1fr);
   border-bottom:1px solid var(--border);background:var(--surface);
 }
-.kpi-cell{padding:12px 20px;border-right:1px solid var(--border)}
+.kpi-cell{padding:14px 22px;border-right:1px solid var(--border)}
 .kpi-cell:last-child{border-right:none}
-.kpi-label{font-size:10px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:4px}
-.kpi-val{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--text);line-height:1}
-.kpi-sub{font-size:10px;color:var(--dim);margin-top:3px}
+.kpi-label{font-size:10.5px;color:var(--dim);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+.kpi-val{font-family:var(--font);font-size:19px;font-weight:800;color:var(--text);line-height:1;letter-spacing:-.02em}
+.kpi-sub{font-size:10.5px;color:var(--muted);margin-top:3px}
 .kpi-cell.green .kpi-val{color:var(--green)}
 .kpi-cell.yellow .kpi-val{color:var(--yellow)}
 .kpi-cell.red .kpi-val{color:var(--red)}
@@ -88,8 +90,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14
 /* ── SECTION ── */
 .sec-head{
   padding:12px 20px 8px;
-  font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--muted);border-bottom:1px solid var(--border);
+  font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--dim);border-bottom:1px solid var(--border);
   display:flex;align-items:center;gap:8px;
   background:var(--surface);position:sticky;top:0;z-index:10;
 }
@@ -107,14 +109,14 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14
 .r3{grid-template-columns:1fr 1fr 1fr}
 .r1{grid-template-columns:1fr}
 .field{display:flex;flex-direction:column;gap:4px}
-.field label{font-size:11px;color:var(--dim);font-weight:500}
+.field label{font-size:11.5px;color:var(--dim);font-weight:600;letter-spacing:.01em}
 .field input,.field select{
   background:var(--panel);border:1px solid var(--border);border-radius:6px;
-  color:var(--text);font-size:13px;font-family:var(--mono);
+  color:var(--text);font-size:13.5px;font-family:var(--font);
   padding:6px 10px;width:100%;outline:none;transition:border-color .15s;
 }
 .field input:focus,.field select:focus{border-color:var(--accent)}
-.field .hint{font-size:10px;color:var(--muted);margin-top:2px}
+.field .hint{font-size:10.5px;color:var(--dim);margin-top:2px;opacity:.75}
 
 /* ── TYPE PILLS ── */
 .type-pills{display:flex;gap:6px;padding:14px 18px 10px;border-bottom:1px solid var(--border);flex-wrap:wrap}
@@ -130,14 +132,14 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:14
 .unit-wrap{overflow-x:auto}
 table.ut{width:100%;border-collapse:collapse;min-width:480px}
 table.ut th{
-  font-size:10px;color:var(--muted);text-align:left;
-  padding:5px 6px;border-bottom:1px solid var(--border);
-  font-weight:600;letter-spacing:.04em;background:var(--panel);white-space:nowrap;
+  font-size:11px;color:var(--dim);text-align:left;
+  padding:6px 6px;border-bottom:1px solid var(--border);
+  font-weight:700;letter-spacing:.03em;background:var(--panel);white-space:nowrap;
 }
 table.ut td{padding:3px 4px;border-bottom:1px solid rgba(42,47,74,.5)}
 table.ut td input,table.ut td select{
   background:var(--panel);border:1px solid var(--border);border-radius:4px;
-  color:var(--text);font-size:12px;font-family:var(--mono);
+  color:var(--text);font-size:12.5px;font-family:var(--font);
   padding:4px 6px;width:100%;outline:none;transition:border-color .15s;
 }
 table.ut td input:focus{border-color:var(--accent)}
@@ -155,28 +157,28 @@ table.ut td input:focus{border-color:var(--accent)}
   display:inline-flex;background:var(--panel);border:1px solid var(--border);border-radius:6px;overflow:hidden;
 }
 .sqm-btn{
-  background:none;border:none;color:var(--dim);font-size:11px;font-family:var(--mono);
-  padding:4px 10px;cursor:pointer;transition:all .15s;
+  background:none;border:none;color:var(--dim);font-size:12px;font-family:var(--font);font-weight:600;
+  padding:5px 12px;cursor:pointer;transition:all .15s;
 }
 .sqm-btn.active{background:var(--accent);color:#fff}
 
 /* ── RESULT PANEL ── */
 .res-section{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);margin-bottom:14px;overflow:hidden}
 .res-head{
-  padding:11px 16px;border-bottom:1px solid var(--border);
-  font-size:11px;font-weight:700;color:var(--dim);
+  padding:11px 18px;border-bottom:1px solid var(--border);
+  font-size:11.5px;font-weight:700;color:var(--accent);
   letter-spacing:.04em;text-transform:uppercase;
   display:flex;justify-content:space-between;align-items:center;
 }
 .res-body{padding:14px 16px}
 
-.dr{display:flex;justify-content:space-between;align-items:baseline;padding:5px 0;border-bottom:1px solid rgba(42,47,74,.4)}
+.dr{display:flex;justify-content:space-between;align-items:baseline;padding:6px 0;border-bottom:1px solid rgba(37,42,66,.6)}
 .dr:last-child{border-bottom:none}
-.dl{font-size:13px;color:var(--dim)}
+.dl{font-size:13.5px;color:var(--dim)}
 .dl.i{padding-left:14px;font-size:12px;color:var(--muted)}
 .dl.bold{font-weight:700;color:var(--text)}
-.dv{font-family:var(--mono);font-size:13px;color:var(--text);text-align:right}
-.dv.tot{font-weight:700;font-size:14px;color:var(--accent)}
+.dv{font-family:var(--font);font-size:13.5px;font-weight:600;color:var(--text);text-align:right;letter-spacing:-.01em}
+.dv.tot{font-weight:800;font-size:15px;color:var(--accent)}
 .dv.sub{font-weight:600;color:var(--dim)}
 .dv.g{color:var(--green)}.dv.y{color:var(--yellow)}.dv.r{color:var(--red)}
 .divl{border-top:1px solid var(--border);margin:6px 0}
@@ -185,7 +187,7 @@ table.ut td input:focus{border-color:var(--accent)}
 .res-two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
 
 /* ── ALERT ── */
-.alert{padding:9px 13px;border-radius:6px;font-size:12px;line-height:1.5;margin-top:8px}
+.alert{padding:10px 14px;border-radius:6px;font-size:12.5px;line-height:1.5;margin-top:8px}
 .alert.g{background:var(--green-dim);border:1px solid rgba(34,197,94,.25);color:var(--green)}
 .alert.y{background:var(--yellow-dim);border:1px solid rgba(245,158,11,.25);color:var(--yellow)}
 .alert.r{background:var(--red-dim);border:1px solid rgba(239,68,68,.25);color:var(--red)}
@@ -193,8 +195,8 @@ table.ut td input:focus{border-color:var(--accent)}
 
 /* ── SENSITIVITY TABLE ── */
 table.sens{width:100%;border-collapse:collapse}
-table.sens th{font-size:10px;color:var(--muted);text-align:center;padding:6px 10px;border-bottom:1px solid var(--border);font-weight:600;background:var(--panel);letter-spacing:.03em;white-space:nowrap}
-table.sens td{font-family:var(--mono);font-size:12px;text-align:center;padding:6px 10px;border-bottom:1px solid rgba(42,47,74,.4);color:var(--dim)}
+table.sens th{font-size:11px;color:var(--dim);text-align:center;padding:7px 10px;border-bottom:1px solid var(--border);font-weight:700;background:var(--panel);letter-spacing:.02em;white-space:nowrap}
+table.sens td{font-family:var(--font);font-size:12.5px;font-weight:500;text-align:center;padding:6px 10px;border-bottom:1px solid rgba(37,42,66,.5);color:var(--dim)}
 table.sens td:first-child{text-align:left;color:var(--text);font-family:var(--sans);font-size:12px}
 table.sens .base td{background:rgba(91,124,250,.06)}
 .cg{color:var(--green)}.cy{color:var(--yellow)}.cr{color:var(--red)}.ca{color:var(--accent);font-weight:700}
@@ -202,22 +204,22 @@ table.sens .base td{background:rgba(91,124,250,.06)}
 /* ── QUICK SUMMARY CARDS ── */
 .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
 .rg-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px}
-.rg-label{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
-.rg-val{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--text)}
+.rg-label{font-size:10.5px;color:var(--dim);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:6px}
+.rg-val{font-family:var(--font);font-size:20px;font-weight:800;color:var(--text);letter-spacing:-.02em}
 .rg-sub{font-size:11px;color:var(--muted);margin-top:3px}
 
 /* ── UNIT RESULT TABLE ── */
 table.urt{width:100%;border-collapse:collapse}
 table.urt th{font-size:10px;color:var(--muted);text-align:right;padding:5px 8px;border-bottom:1px solid var(--border);font-weight:600;letter-spacing:.03em;white-space:nowrap}
 table.urt th:first-child{text-align:left}
-table.urt td{font-family:var(--mono);font-size:12px;text-align:right;padding:5px 8px;border-bottom:1px solid rgba(42,47,74,.3);color:var(--dim)}
+table.urt td{font-family:var(--font);font-size:12.5px;font-weight:500;text-align:right;padding:5px 8px;border-bottom:1px solid rgba(37,42,66,.4);color:var(--dim)}
 table.urt td:first-child{text-align:left;color:var(--text);font-family:var(--sans)}
 table.urt tr:last-child td{border-bottom:none;font-weight:700;color:var(--text)}
 
 /* ── BUTTONS ── */
-.btn-primary{background:var(--accent);color:#fff;border:none;border-radius:6px;padding:7px 18px;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .15s}
+.btn-primary{background:var(--accent);color:#fff;border:none;border-radius:7px;padding:8px 20px;font-size:13.5px;font-weight:700;cursor:pointer;transition:opacity .15s;letter-spacing:-.01em}
 .btn-primary:hover{opacity:.85}
-.btn-sec{background:var(--panel);color:var(--dim);border:1px solid var(--border);border-radius:6px;padding:7px 14px;font-size:13px;cursor:pointer;transition:background .15s}
+.btn-sec{background:var(--panel);color:var(--dim);border:1px solid var(--border);border-radius:7px;padding:8px 16px;font-size:13px;cursor:pointer;transition:background .15s}
 .btn-sec:hover{background:var(--border)}
 
 .hidden{display:none!important}
@@ -237,7 +239,7 @@ table.urt tr:last-child td{border-bottom:none;font-weight:700;color:var(--text)}
 
 <!-- HEADER -->
 <div class="app-header">
-  <h1>공동주택 초기검토 <span class="tag">사업성 산출기 v3</span></h1>
+  <h1>CCRC</h1>
   <div class="header-actions">
     <div class="sqm-toggle">
       <button class="sqm-btn active" id="btn_sqm" onclick="setUnit('sqm')">㎡</button>
@@ -309,25 +311,25 @@ table.urt tr:last-child td{border-bottom:none;font-weight:700;color:var(--text)}
     <div class="row r3">
       <div class="field">
         <label>대지면적 (<span class="unit-label">㎡</span>)</label>
-        <input type="number" id="site_area" value="4200" step="10" oninput="liveUpdate()">
+        <input type="number" id="site_area" value="18781" step="10" oninput="liveUpdate()">
       </div>
       <div class="field">
         <label>용적률 (%)</label>
-        <input type="number" id="far" value="230" step="5" oninput="liveUpdate()">
+        <input type="number" id="far" value="309" step="5" oninput="liveUpdate()">
       </div>
       <div class="field">
         <label>건폐율 (%)</label>
-        <input type="number" id="bcr" value="50" step="1" oninput="liveUpdate()">
+        <input type="number" id="bcr" value="27" step="1" oninput="liveUpdate()">
       </div>
     </div>
     <div class="row r3">
       <div class="field">
         <label>지상 층수</label>
-        <input type="number" id="floors_above" value="15" step="1" oninput="liveUpdate()">
+        <input type="number" id="floors_above" value="25" step="1" oninput="liveUpdate()">
       </div>
       <div class="field">
         <label>지하 층수</label>
-        <input type="number" id="floors_below" value="2" step="1" oninput="liveUpdate()">
+        <input type="number" id="floors_below" value="3" step="1" oninput="liveUpdate()">
       </div>
       <div class="field">
         <label>주차 기준 (대/세대)</label>
@@ -339,12 +341,12 @@ table.urt tr:last-child td{border-bottom:none;font-weight:700;color:var(--text)}
       <div class="row r2">
         <div class="field">
           <label>종전자산 평가액 합계 (백만원)</label>
-          <input type="number" id="prior_asset" value="6300" step="500" oninput="liveUpdate()">
+          <input type="number" id="prior_asset" value="32100" step="500" oninput="liveUpdate()">
           <span class="hint">조합원 권리가액 산정 기준</span>
         </div>
         <div class="field">
           <label>조합원 수 (명)</label>
-          <input type="number" id="member_count" value="42" step="1" oninput="liveUpdate()">
+          <input type="number" id="member_count" value="107" step="1" oninput="liveUpdate()">
         </div>
       </div>
     </div>
@@ -388,7 +390,7 @@ table.urt tr:last-child td{border-bottom:none;font-weight:700;color:var(--text)}
               <th>공용비율</th>
               <th id="col_member_h">조합(세대)</th>
               <th>분양(세대)</th>
-              <th>분양가(만/㎡)</th>
+              <th id="col_price_h">분양가(만/㎡)</th>
               <th></th>
             </tr>
           </thead>
@@ -411,7 +413,7 @@ table.urt tr:last-child td{border-bottom:none;font-weight:700;color:var(--text)}
       </div>
       <div class="field">
         <label>지하 공사비 단가 (만원/㎡)</label>
-        <input type="number" id="cost_below" value="420" step="10" oninput="liveUpdate()">
+        <input type="number" id="cost_below" value="450" step="10" oninput="liveUpdate()">
         <span class="hint">지하연면적 기준</span>
       </div>
     </div>
@@ -433,7 +435,7 @@ table.urt tr:last-child td{border-bottom:none;font-weight:700;color:var(--text)}
       </div>
       <div class="field">
         <label>철거·측량비 (백만원)</label>
-        <input type="number" id="demolition_cost" value="300" step="50" oninput="liveUpdate()">
+        <input type="number" id="demolition_cost" value="800" step="50" oninput="liveUpdate()">
       </div>
       <div class="field">
         <label>조합운영비 (공사비 %)</label>
@@ -444,7 +446,7 @@ table.urt tr:last-child td{border-bottom:none;font-weight:700;color:var(--text)}
     <div class="row r3">
       <div class="field">
         <label>제세금·신탁보수 (백만원)</label>
-        <input type="number" id="tax_trust" value="600" step="50" oninput="liveUpdate()">
+        <input type="number" id="tax_trust" value="1500" step="50" oninput="liveUpdate()">
       </div>
       <div class="field">
         <label>금융비용 (공사비 %)</label>
@@ -497,7 +499,7 @@ table.urt tr:last-child td{border-bottom:none;font-weight:700;color:var(--text)}
     <div class="row r3">
       <div class="field">
         <label>사업 기간 (개월)</label>
-        <input type="number" id="project_months" value="60" step="6" oninput="liveUpdate()">
+        <input type="number" id="project_months" value="72" step="6" oninput="liveUpdate()">
         <span class="hint">인허가~준공 기준</span>
       </div>
       <div class="field">
@@ -506,19 +508,19 @@ table.urt tr:last-child td{border-bottom:none;font-weight:700;color:var(--text)}
       </div>
       <div class="field">
         <label>분양수입 시점 (개월)</label>
-        <input type="number" id="revenue_month" value="36" step="3" oninput="liveUpdate()">
+        <input type="number" id="revenue_month" value="42" step="3" oninput="liveUpdate()">
         <span class="hint">착수 후 분양대금 집중 시점</span>
       </div>
     </div>
     <div class="row r2">
       <div class="field">
         <label>자기자본 투입액 (백만원)</label>
-        <input type="number" id="equity_input" value="5000" step="500" oninput="liveUpdate()">
+        <input type="number" id="equity_input" value="9200" step="500" oninput="liveUpdate()">
         <span class="hint">초기 토지비·부대비 자부담</span>
       </div>
       <div class="field">
         <label>비용 집중 구간 (개월)</label>
-        <input type="number" id="cost_spread" value="48" step="6" oninput="liveUpdate()">
+        <input type="number" id="cost_spread" value="60" step="6" oninput="liveUpdate()">
         <span class="hint">공사비 지출 종료 시점</span>
       </div>
     </div>
@@ -553,7 +555,7 @@ table.urt tr:last-child td{border-bottom:none;font-weight:700;color:var(--text)}
         <thead><tr>
           <th>타입</th><th>전용(㎡)</th><th>공급(㎡)</th>
           <th id="qth_member">조합</th><th>분양</th><th>합계</th>
-          <th>분양가(만/㎡)</th><th>분양수입(백만)</th>
+          <th id="price_unit_th">분양가(만/㎡)</th><th>분양수입(백만)</th>
         </tr></thead>
         <tbody id="unit_quick_tbody"></tbody>
       </table>
@@ -668,11 +670,6 @@ table.urt tr:last-child td{border-bottom:none;font-weight:700;color:var(--text)}
     </div>
   </div>
 
-  <div class="res-section" style="margin-top:14px">
-    <div class="res-head">유형별 법적 규모 기준</div>
-    <div class="res-body" id="legal_check_body">산출 실행 전</div>
-  </div>
-
 </div>
 </div><!-- /tab-sensitivity -->
 
@@ -703,12 +700,13 @@ function defaultCommonRatio(excl) {
   return 1.15;
 }
 
-// 기본값: 대지 4,200㎡ / 용적률 230% → 허용 연면적 9,660㎡ 기준
-// 공급면적 합계 9,583㎡ (허용 대비 99.2%), 총 129세대, 조합원 42명
+// 기본값: 마포구 성산동 가로주택정비사업 (설계개요 A0-016~018 기준)
+// 대지 18,781㎡ / 용적률 309% / 총 556세대 (조합원107 + 분양449)
+// 조합원 = 기부형51 + 매입형56 = 107세대
 const DEFAULT_UNITS = [
-  {id:0, type:'49A', excl:49, commonRatio:1.30, member:15, sale:26, price:1600},
-  {id:1, type:'59B', excl:59, commonRatio:1.25, member:17, sale:39, price:1700},
-  {id:2, type:'74C', excl:74, commonRatio:1.20, member:10, sale:22, price:1800},
+  {id:0, type:'44A/B', excl:44.88, commonRatio:1.30, member:32,  sale:58,  price:1650},
+  {id:1, type:'59A~D', excl:59.81, commonRatio:1.25, member:68,  sale:383, price:1750},
+  {id:2, type:'84A/B', excl:84.84, commonRatio:1.20, member:7,   sale:8,   price:1900},
 ];
 
 // ════════════════════════════════════════════
@@ -718,10 +716,19 @@ const $   = id => document.getElementById(id);
 const n   = id => parseFloat($(id)?.value) || 0;
 const fmt = (v,d=0) => v.toLocaleString('ko-KR',{minimumFractionDigits:d,maximumFractionDigits:d});
 const fmtM  = v => fmt(Math.round(v)) + ' 백만';
-const fmtB  = v => (v/100).toFixed(1) + ' 억';  // v: 백만원
+const fmtB  = v => fmt(Math.round(v/100)) + '억';  // v: 백만원 → 억(콤마)
 const fmtP  = v => fmt(v,1) + '%';
-const sqm2p = v => (v / SQM_PER_PYONG).toFixed(1);
-const areaStr = v => unitMode==='sqm' ? fmt(v,1)+'㎡' : sqm2p(v)+'평';
+const sqm2p   = v => (v / SQM_PER_PYONG).toFixed(1);
+const areaStr = v => unitMode==='sqm' ? fmt(v,1)+'㎡' : fmt(v/SQM_PER_PYONG,1)+'평';
+// 단가 변환: 만원/㎡ → 만원/평 (1평=3.30579㎡)
+const priceStr  = (v, unit='㎡') => {
+  // v: 만원/㎡ 기준
+  const val = unitMode==='sqm' ? v : v * SQM_PER_PYONG;
+  const u   = unitMode==='sqm' ? '만/㎡' : '만/평';
+  return fmt(Math.round(val)) + ' ' + u;
+};
+// 백만원 표시 (콤마 포함)
+const fmtMK = v => fmt(Math.round(v)) + ' 백만';
 
 function setDv(id, val, cls='') {
   const el=$(id); if(!el) return;
@@ -773,6 +780,11 @@ function setUnit(mode) {
   $('btn_sqm').classList.toggle('active', mode==='sqm');
   $('btn_pyg').classList.toggle('active', mode==='pyg');
   document.querySelectorAll('.unit-label').forEach(el => el.textContent = mode==='sqm'?'㎡':'평');
+  // 세대 구성표 헤더 단위 갱신
+  const pth = $('price_unit_th');
+  if(pth) pth.textContent = mode==='sqm' ? '분양가(만/㎡)' : '분양가(만/평)';
+  const cph = $('col_price_h');
+  if(cph) cph.textContent = mode==='sqm' ? '분양가(만/㎡)' : '분양가(만/평)';
   calculate();
 }
 
@@ -908,11 +920,11 @@ function renderQuickTable() {
     sTot += tot;
     sRev += rev;
     const tr = document.createElement('tr');
-    tr.innerHTML=`<td>${u.type||'—'}</td><td>${(u.excl||0).toFixed(1)}</td><td>${sup.toFixed(1)}</td><td>${u.member||0}</td><td>${u.sale||0}</td><td>${tot}</td><td>${fmt(u.price||0)}</td><td>${fmt(Math.round(rev))}</td>`;
+    tr.innerHTML=`<td>${u.type||'—'}</td><td>${areaStr(u.excl||0)}</td><td>${areaStr(sup)}</td><td>${u.member||0}</td><td>${u.sale||0}</td><td>${tot}</td><td>${priceStr(u.price||0)}</td><td>${fmt(Math.round(rev))} 백만</td>`;
     tbody.appendChild(tr);
   });
   const tr = document.createElement('tr');
-  tr.innerHTML=`<td>합 계</td><td>${sE.toFixed(0)}</td><td>${sS.toFixed(0)}</td><td>${sMem}</td><td>${sSale}</td><td>${sTot}</td><td>—</td><td>${fmt(Math.round(sRev))}</td>`;
+  tr.innerHTML=`<td>합 계</td><td>${areaStr(sE)}</td><td>${areaStr(sS)}</td><td>${sMem}</td><td>${sSale}</td><td>${sTot}</td><td>—</td><td>${fmt(Math.round(sRev))} 백만</td>`;
   tbody.appendChild(tr);
 }
 
@@ -1242,9 +1254,9 @@ function calculate() {
     const relocOk = R.relocCost <= R.hugReloc;
     hugHtml=`
       <div class="dr"><span class="dl">평균 분양가 (공급면적 기준)</span>
-        <span class="dv ${hugOk?'g':'r'}">${fmt(avgPrice,0)} 만원/㎡ ${hugOk?'▼ 한도 내':'▲ 한도 초과'}</span>
+        <span class="dv ${hugOk?'g':'r'}">${priceStr(avgPrice)} ${hugOk?'▼ 한도 내':'▲ 한도 초과'}</span>
       </div>
-      <div class="dr"><span class="dl">HUG 심사 한도</span><span class="dv">${fmt(R.hugLimit,0)} 만원/㎡</span></div>
+      <div class="dr"><span class="dl">HUG 심사 한도</span><span class="dv">${priceStr(R.hugLimit)}</span></div>
       <div class="dr"><span class="dl">이주비 보증 한도</span>
         <span class="dv ${relocOk?'g':'r'}">${fmtM(R.relocCost)} / 한도 ${fmtM(R.hugReloc)} ${relocOk?'✓':'초과'}</span>
       </div>
@@ -1269,7 +1281,6 @@ function calculate() {
 
   // ── 민감도 / 법규 ──
   renderSensitivity(R);
-  renderLegalCheck(R);
 }
 
 // ════════════════════════════════════════════
@@ -1321,38 +1332,6 @@ function renderSensitivity(base) {
   });
 }
 
-// ════════════════════════════════════════════
-// LEGAL CHECK
-// ════════════════════════════════════════════
-function renderLegalCheck(R) {
-  const el = $('legal_check_body'); if(!el) return;
-  const checks = {
-    apt:[
-      {label:'5층 이상 (주택법 아파트 정의)', ok:R.fAbove>=5,   msg:`계획 ${R.fAbove}층`},
-      {label:'세대당 주차 1대 이상 (60㎡ 초과)', ok:R.pkRatio>=1, msg:`${R.pkRatio} 대/세대`},
-    ],
-    row:[
-      {label:'4층 이하',         ok:R.fAbove<=4,          msg:`계획 ${R.fAbove}층`},
-      {label:'연면적 660㎡ 초과', ok:R.aboveGfa>660,       msg:`${areaStr(R.aboveGfa)}`},
-    ],
-    multi:[
-      {label:'4층 이하',         ok:R.fAbove<=4,          msg:`계획 ${R.fAbove}층`},
-      {label:'연면적 660㎡ 이하', ok:R.aboveGfa<=660,      msg:`${areaStr(R.aboveGfa)}`},
-    ],
-    single:[
-      {label:'3층 이하',          ok:R.fAbove<=3,          msg:`계획 ${R.fAbove}층`},
-      {label:'연면적 660㎡ 이하', ok:n('dg_house_area')<=660, msg:`${n('dg_house_area')} ㎡`},
-      {label:'19세대 이하',       ok:n('dg_units')<=19,    msg:`${n('dg_units')} 세대`},
-      {label:'구분등기 불가 (단독주택)',ok:true,             msg:'주의 확인 필요'},
-    ],
-  };
-  const list = checks[R.type]||[];
-  el.innerHTML = list.map(c=>`
-    <div class="dr">
-      <span class="dl">${c.label}</span>
-      <span class="dv ${c.ok?'g':'r'}">${c.msg} ${c.ok?'✓':'✕'}</span>
-    </div>`).join('');
-}
 
 // ════════════════════════════════════════════
 // RESET
